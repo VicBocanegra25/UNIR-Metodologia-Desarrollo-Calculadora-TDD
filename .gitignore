@@ -1,0 +1,16 @@
+# Gradle files
+.gradle/
+build/
+
+# IntelliJ files
+.idea/
+*.iml
+out/
+gen/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Keep the Gradle Wrapper (important!)
+!gradle/wrapper/gradle-wrapper.jar
