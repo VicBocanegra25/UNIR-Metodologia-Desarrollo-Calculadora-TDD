@@ -1,5 +1,6 @@
 package unir;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -7,10 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StandardMathEngineTest {
 
+    final MathEngine engine = new StandardMathEngine();
+
+
     @Test
     @DisplayName("La suma de dos números positivos debe ser correcta y el resultado positivo.")
     void testSumarNumerosPositivos() {
-        MathEngine engine = new StandardMathEngine();
         double resultado = engine.sumar(2.5, 3);
 
         assertEquals(5.5, resultado, "La suma de 2.5 y 3 debe ser 5.5");
@@ -19,7 +22,6 @@ public class StandardMathEngineTest {
     @Test
     @DisplayName("La suma de dos números negativos debe ser correcta y el resultado negativo.")
     void testSumarNumerosNegativos() {
-        MathEngine engine = new StandardMathEngine();
         double resultado = engine.sumar(-2.5, -3);
 
         assertEquals(-5.5, resultado, "La suma de -2.5 y -3 debe ser -5.5");
@@ -28,7 +30,6 @@ public class StandardMathEngineTest {
     @Test
     @DisplayName("La suma de un sumando y el 0 debe ser igual al mismo sumando.")
     void testSumarUnSumandoYCero() {
-        MathEngine engine = new StandardMathEngine();
         double resultado = engine.sumar(5, 0);
 
         assertEquals(5, resultado, "La suma de 5 y 0 debe ser 5");
@@ -37,7 +38,6 @@ public class StandardMathEngineTest {
     @Test
     @DisplayName("La suma de un número positivo con uno negativo debe ser correcta y el resultado positivo.")
     void testSumarNumeroPositivoConUnoNegativo() {
-        MathEngine engine = new StandardMathEngine();
         double resultado = engine.sumar(5, -3);
 
         assertEquals(2, resultado, "La suma de 5 y -3 debe ser 2");
@@ -46,7 +46,6 @@ public class StandardMathEngineTest {
     @Test
     @DisplayName("La suma de un número positivo con uno negativo debe ser correcta y el resultado negativo.")
     void testSumarNumeroNegativoConUnoPositivo() {
-        MathEngine engine = new StandardMathEngine();
         double resultado = engine.sumar(-5, 3);
 
         assertEquals(-2, resultado, "La suma de -5 y 3 debe ser -2");
@@ -55,7 +54,6 @@ public class StandardMathEngineTest {
     @Test
     @DisplayName("La suma de a + b debe ser igual que b + a.")
     void testPropiedadSumaConmutativa() {
-        MathEngine engine = new StandardMathEngine();
         double resultado = engine.sumar(5, 3);
         double resultado2 = engine.sumar(3, 5);
 
