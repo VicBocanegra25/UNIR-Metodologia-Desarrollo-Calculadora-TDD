@@ -92,7 +92,7 @@ public class StandardMathEngineTest {
     void testRestarNumerosNegativos() {
         double resultado = engine.restar(-5, -8);
 
-        assertEquals(-2, resultado, "La resta de -5 y -8 debe ser 3");
+        assertEquals(3, resultado, "La resta de -5 y -8 debe ser 3");
     }
 
     @Test
@@ -100,7 +100,7 @@ public class StandardMathEngineTest {
     void testRestarNumerosNegativos2() {
         double resultado = engine.restar(-5, -3);
 
-        assertEquals(2, resultado, "La resta de -5 y -3 debe ser -2");
+        assertEquals(-2, resultado, "La resta de -5 y -3 debe ser -2");
     }
 
     @Test
