@@ -5,7 +5,7 @@ public class StandardMathEngine implements MathEngine {
 
     @Override
     public double sumar(double sumandoUno, double sumandoDos) {
-        return 0;
+        return sumandoUno + sumandoDos;
     }
 
     @Override
