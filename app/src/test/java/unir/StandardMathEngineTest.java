@@ -112,5 +112,46 @@ public class StandardMathEngineTest {
         assertNotEquals(resultado, resultado2, "La resta de 5 y 3 no es lo mismo que la resta de 3 y 5.");
     }
 
+    // Pruebas unitarias correspondientes a la multiplicación
+    @Test
+    @DisplayName("La multiplicación de dos números positivos debe ser correcta y positiva.")
+    void testMultiplicarNumerosPositivos() {
+        double resultado = engine.multiplicar(5, 3);
+
+        assertEquals(15, resultado, "La multiplicación de 5 y 3 debe ser 15");
+    }
+
+    @Test
+    @DisplayName("La multiplicación de un número positivo por uno negativo debe ser correcta y negativa.")
+    void testMultiplicarNumeroPositivoPorNegativo() {
+        double resultado = engine.multiplicar(5, -3);
+
+        assertEquals(-15, resultado, "La multiplicación de 5 y -3 debe ser -15");
+    }
+
+    @Test
+    @DisplayName("La multiplicación de dos números negativos debe ser positiva.")
+    void testMultiplicarNumerosNegativos() {
+        double resultado = engine.multiplicar(-5, -3);
+
+        assertEquals(15, resultado, "La multiplicación de -5 y -3 debe ser 15");
+    }
+
+    @Test
+    @DisplayName("La multiplicación de un número por 1 debe resultar el mismo número.")
+    void testMultiplicarNumeroPorUno() {
+        double resultado = engine.multiplicar(5, 1);
+
+        assertEquals(5, resultado, "El resultado de multiplicar 5 por 1 debe ser 5");
+    }
+
+    @Test
+    @DisplayName("La multiplicación de un número por 0 debe ser 0.")
+    void testMultiplicarNumeroPorCero() {
+        double resultado = engine.multiplicar(5, 0);
+
+        assertEquals(0, resultado, "El resultado de multiplicar 5 por 0 debe ser 0");
+    }
+
 
 }
