@@ -55,7 +55,24 @@ public class StandardMathEngine implements MathEngine {
 
     @Override
     public double exponenciar(double exponente) {
-        return 0;
+        double suma = 1.0;
+        double termino = 1.0;
+        int n = 1;
+
+        while (obtenerValorAbsoluto(termino) > TOLERANCIA) {
+            // Se calcula el siguiente término de la serie: Tn = T{n-1} * (x / n)
+            double division = dividir(exponente, n);
+            termino = multiplicar(termino, division);
+
+            suma = sumar(suma, termino);
+            n++;
+
+            // Si se rebasan las 100 iteraciónes, significa que no hubo convergencia y se detiene el loop
+            if (n > 100) {
+                break;
+            }
+        }
+        return suma;
     }
 
     // Función auxiliar para obtener el valor absoluto
