@@ -10,7 +10,7 @@ public class StandardMathEngine implements MathEngine {
 
     @Override
     public double restar(double minuendo, double sustraendo) {
-        return 0;
+        return minuendo - sustraendo;
     }
 
     @Override
