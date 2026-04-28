@@ -20,7 +20,10 @@ public class StandardMathEngine implements MathEngine {
 
     @Override
     public double dividir(double dividendo, double divisor) {
-        return 0;
+        if (divisor == 0) {
+            throw new IllegalArgumentException("No se puede dividir por cero");
+        }
+        return dividendo / divisor;
     }
 
     @Override
