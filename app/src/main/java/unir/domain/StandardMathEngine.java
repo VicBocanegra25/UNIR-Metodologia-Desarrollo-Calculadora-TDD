@@ -1,4 +1,4 @@
-package unir;
+package unir.domain;
 
 public class StandardMathEngine implements MathEngine {
     final double TOLERANCIA = 0.001;

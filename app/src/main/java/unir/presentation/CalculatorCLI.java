@@ -1,7 +1,7 @@
 package unir.presentation;
 
-import unir.MathEngine;
-import unir.StandardMathEngine;
+import unir.domain.MathEngine;
+import unir.domain.StandardMathEngine;
 import unir.domain.ParsedCommand;
 
 import java.util.Scanner;
@@ -42,7 +42,7 @@ public class CalculatorCLI {
                 case "exponenciar" -> engine.exponenciar(cmd.operand1());
                 default -> throw new IllegalStateException("Operación no soportada: " + cmd.operator());
             };
-            return "Resultado: " + resultado;
+            return "\nResultado: " + resultado + "\n";
         } catch (Exception e) {
             return "Error: " + e.getMessage();
         }

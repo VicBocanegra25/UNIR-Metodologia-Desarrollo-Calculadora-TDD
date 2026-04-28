@@ -3,7 +3,7 @@ package unir.presentation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import unir.StandardMathEngine;
+import unir.domain.StandardMathEngine;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

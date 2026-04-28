@@ -1,6 +1,7 @@
-package unir.domain;
+package unir;
 
-import unir.StandardMathEngine;
+
+import unir.domain.StandardMathEngine;
 import unir.presentation.CalculatorCLI;
 import unir.presentation.InputParser;
 

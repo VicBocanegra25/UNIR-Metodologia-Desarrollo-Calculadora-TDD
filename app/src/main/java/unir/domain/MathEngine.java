@@ -1,4 +1,4 @@
-package unir;
+package unir.domain;
 
 public interface MathEngine {
     double sumar(double sumandoUno, double sumandoDos);
