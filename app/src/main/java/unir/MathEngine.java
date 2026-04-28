@@ -7,4 +7,5 @@ public interface MathEngine {
     double dividir(double dividendo, double divisor);
     double calcularRaiz(double radicando);
     double exponenciar (double exponente);
+    double obtenerValorAbsoluto(double numero);
 }

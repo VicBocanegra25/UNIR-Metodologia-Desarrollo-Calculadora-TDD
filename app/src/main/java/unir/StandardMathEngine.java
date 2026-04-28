@@ -28,7 +28,29 @@ public class StandardMathEngine implements MathEngine {
 
     @Override
     public double calcularRaiz(double radicando) {
-        return 0;
+        if (radicando < 0) {
+            throw new IllegalArgumentException("No se puede calcular la raíz de un número negativo.");
+        }
+
+        // Caso base: la raíz de 0 es 0
+        if (radicando == 0) {
+            return 0;
+        }
+
+        double aproximacionAnterior;
+
+        double aproximacionActual = radicando;
+
+        do {
+            aproximacionAnterior = aproximacionActual;
+
+            double division = dividir(radicando, aproximacionAnterior);
+            double suma = sumar(aproximacionAnterior, division);
+            aproximacionActual = multiplicar(0.5, suma);
+        } while (obtenerValorAbsoluto(restar(aproximacionActual, aproximacionAnterior)) > TOLERANCIA);
+
+
+        return aproximacionActual;
     }
 
     @Override
@@ -36,5 +58,10 @@ public class StandardMathEngine implements MathEngine {
         return 0;
     }
 
+    // Función auxiliar para obtener el valor absoluto
+    @Override
+    public double obtenerValorAbsoluto(double numero) {
+        return numero < 0 ? multiplicar(numero, -1) : numero;
+    }
 
 }

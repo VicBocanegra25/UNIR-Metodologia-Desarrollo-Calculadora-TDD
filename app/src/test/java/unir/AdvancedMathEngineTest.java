@@ -16,7 +16,7 @@ public class AdvancedMathEngineTest {
     void testRaizCuadradaNumero() {
         double resultado = engine.calcularRaiz(16);
 
-        assertEquals(4, resultado, "La raíz cuadrada de 16 debe ser 4");
+        assertEquals(4, resultado, TOLERANCIA,"La raíz cuadrada de 16 debe ser 4");
     }
 
     @Test
@@ -59,6 +59,14 @@ public class AdvancedMathEngineTest {
         double resultado = engine.calcularRaiz(0);
 
         assertEquals(0, resultado, 0.001, "La raíz cuadrada de 0 debe ser 0");
+    }
+
+    // Probando la función auxiliar para obtener valores absolutos.
+    @Test
+    @DisplayName("El valor absoluto de un número negativo es el mismo número pero positivo.")
+    void testValorAbsoluto() {
+        double resultado = engine.obtenerValorAbsoluto(-5);
+        assertEquals(5, resultado, "El valor absoluto de -5 debe ser 5");
     }
 
 
