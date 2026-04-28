@@ -4,8 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StandardMathEngineTest {
 
@@ -153,5 +152,52 @@ public class StandardMathEngineTest {
         assertEquals(0, resultado, "El resultado de multiplicar 5 por 0 debe ser 0");
     }
 
+    // Pruebas unitarias correspondientes a la división
+    @Test
+    @DisplayName("La división de dos números positivos debe ser correcta y positiva.")
+    void testDividirNumerosPositivos() {
+        double resultado = engine.dividir(10, 2);
 
+        assertEquals(5, resultado, "La división de 10 por 2 debe ser 5");
+    }
+
+    @Test
+    @DisplayName("La división de un número positivo por uno negativo debe ser correcta y negativa.")
+    void testDividirNumeroPositivoPorNegativo() {
+        double resultado = engine.dividir(10, -2);
+
+        assertEquals(-5, resultado, "La división de 10 por -2 debe ser -5");
+    }
+
+    @Test
+    @DisplayName("La división de dos números negativos debe ser correcta y positiva.")
+    void testDividirNumerosNegativos() {
+        double resultado = engine.dividir(-10, -2);
+
+        assertEquals(5, resultado, "La división de -10 por -2 debe ser 5");
+    }
+
+    @Test
+    @DisplayName("La división de un número por 1 debe ser el mismo número.")
+    void testDividirNumeroPorUno() {
+        double resultado = engine.dividir(10, 1);
+
+        assertEquals(10, resultado, "La división de 10 por 1 debe ser 10");
+    }
+
+    @Test
+    @DisplayName("La división de un número por sí mismo da como resultado 1.")
+    void testDividirNumeroPorMismoNumero() {
+        double resultado = engine.dividir(10, 10);
+
+        assertEquals(1, resultado, "La división de 10 por 10 debe ser 1");
+    }
+
+    @Test
+    @DisplayName("La división de un número por 0 es indefinida y resulta en una excepción.")
+    void testDividirNumeroPorZero() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> engine.dividir(10, 0));
+
+        assertEquals("No se puede dividir por cero", exception.getMessage());
+    }
 }
