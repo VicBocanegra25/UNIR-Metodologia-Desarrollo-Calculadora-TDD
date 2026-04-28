@@ -32,23 +32,35 @@ El desarrollo sigue estrictamente el ciclo **Red-Green-Refactor**. La secuencia 
 
 ## Instalación y Ejecución
 
-Para trabajar con este proyecto, se debe instalar el **JDK 21**.
+Para trabajar con este proyecto, se debe contar con el **JDK 21** instalado en el sistema (compatible con entornos WSL).
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone https://github.com/VicBocanegra25/UNIR-Metodologia-Desarrollo-Calculadora-TDD.git
+    git clone [https://github.com/VicBocanegra25/UNIR-Metodologia-Desarrollo-Calculadora-TDD.git](https://github.com/VicBocanegra25/UNIR-Metodologia-Desarrollo-Calculadora-TDD.git)
+    cd UNIR-Metodologia-Desarrollo-Calculadora-TDD
     ```
 2.  **Ejecutar las pruebas unitarias:**
     ```bash
     ./gradlew test
     ```
-3.  **Compilar el proyecto:**
-    ```bash
-    ./gradlew build
-    ```
-4.  **Ejecutar la aplicación (CLI):**
+3.  **Ejecutar la aplicación (Modo Interactivo):**
     ```bash
     ./gradlew run
     ```
 
+## Uso de la Aplicación
+
+Una vez iniciada, la calculadora funcionará en modo interactivo. Los comandos siguen el formato: `<operacion> <numero1> [numero2]`.
+
+| Operación | Ejemplo de Comando | Descripción |
+| :--- | :--- | :--- |
+| **Suma** | `sumar 10 5` | Suma dos números reales. |
+| **Resta** | `restar 20 8.5` | Resta el segundo del primero. |
+| **Multiplicación** | `multiplicar 4 3` | Multiplica dos números reales. |
+| **División** | `dividir 10 2` | Divide el primero por el segundo. |
+| **Raíz Cuadrada** | `raiz 16` | Calcula la raíz aproximada (Newton-Raphson). |
+| **Exponencial** | `exp 2` | Calcula $e^x$ aproximado (Serie de Taylor). |
+| **Salir** | `salir` | Cierra la aplicación. |
+
+> **Nota:** La calculadora es robusta ante espacios extra y diferencia entre mayúsculas/minúsculas. Si se ingresa una operación no soportada o una división por cero, la aplicación informará del error sin cerrarse.
 ---
