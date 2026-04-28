@@ -15,7 +15,7 @@ public class StandardMathEngine implements MathEngine {
 
     @Override
     public double multiplicar(double multiplicando, double multiplicador) {
-        return 0;
+        return multiplicando * multiplicador;
     }
 
     @Override
