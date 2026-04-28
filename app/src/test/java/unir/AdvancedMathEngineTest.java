@@ -69,6 +69,17 @@ public class AdvancedMathEngineTest {
         assertEquals(5, resultado, "El valor absoluto de -5 debe ser 5");
     }
 
+    // Pruebas unitarias correspondientes a la exponenciación de e^x.
+    @Test
+    @DisplayName("La función exponencial e^x debe ser correcta y precisa.")
+    void testExponencial() {
+        // e^0 = 1
+        assertEquals(1.0, engine.exponenciar(0), 0.001);
+        // e^1 ≈ 2.718
+        assertEquals(2.718, engine.exponenciar(1), 0.001);
+        // e^2 ≈ 7.389
+        assertEquals(7.389, engine.exponenciar(2), 0.001);
+    }
 
 
 }
