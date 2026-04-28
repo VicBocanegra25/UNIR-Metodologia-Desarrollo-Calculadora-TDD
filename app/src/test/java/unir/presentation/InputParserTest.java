@@ -52,4 +52,15 @@ public class InputParserTest {
         assertEquals(5.0, cmd.operand1());
         assertEquals(10.0, cmd.operand2());
     }
+
+    @Test
+    @DisplayName("Debe lanzar una excepción si la operación no es reconocida")
+    void testOperacionNoSoportada() {
+        InputParser parser = new InputParser();
+
+        // "porcentaje" no está en nuestra lista de operaciones permitidas
+        assertThrows(IllegalArgumentException.class, () -> {
+            parser.parse("porcentaje 5.0 6");
+        }, "Debe fallar al recibir una operación no soportada");
+    }
 }
